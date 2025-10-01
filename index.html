@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>追剧网站 - 在线影视搜索</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1 class="logo">🎬 追剧网站</h1>
+            <p class="subtitle">海量影视资源，一键搜索</p>
+        </header>
+
+        <!-- 搜索区域 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="请输入剧名，例如：子夜归" />
+                <button id="searchBtn" class="search-btn">
+                    <span>搜索</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 加载提示 -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>正在搜索中...</p>
+        </div>
+
+        <!-- 搜索结果 -->
+        <div id="results" class="results-section"></div>
+
+        <!-- 详情页面 -->
+        <div id="detailPage" class="detail-page" style="display: none;">
+            <button id="backBtn" class="back-btn">← 返回搜索</button>
+            
+            <div class="detail-container">
+                <div class="detail-header">
+                    <img id="detailPoster" class="detail-poster" src="" alt="">
+                    <div class="detail-info">
+                        <h2 id="detailTitle" class="detail-title"></h2>
+                        <p id="detailSubtitle" class="detail-subtitle"></p>
+                        <div id="detailMeta" class="detail-meta"></div>
+                        <p id="detailDesc" class="detail-desc"></p>
+                    </div>
+                </div>
+
+                <!-- 视频播放器 -->
+                <div id="playerContainer" class="player-container" style="display: none;">
+                    <h3 class="section-title">正在播放: <span id="currentEpisode"></span></h3>
+                    <video id="videoPlayer" class="video-player" controls autoplay>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+
+                <!-- 剧集列表 -->
+                <div class="episodes-section">
+                    <h3 class="section-title">选集播放</h3>
+                    <div id="episodesList" class="episodes-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>妖狐API提供 | 交流群: 1101215018</p>
+        </footer>
+    </div>
+
+    <!-- HLS.js 用于播放 m3u8 格式视频 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
